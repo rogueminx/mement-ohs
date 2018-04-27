@@ -17,9 +17,14 @@ class RecipientsController < ApplicationController
     end
   end
 
+  def new_memento
+    @recipient = @recipient.find(params[:id])
+    redirect_to new_recipient_memento_path(@recipient)
+  end
+
 private
   def recipient_params
-    params.require(:recipient).permit(:name, :email, :relation, :previous_recipient)
+    params.require(:recipient).permit(:name, :email, :relation)
   end
 
 end
