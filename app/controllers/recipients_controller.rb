@@ -1,4 +1,6 @@
 class RecipientsController < ApplicationController
+  before_action :authenticate_user!, :only => [:new]
+
   def new
     @recipient = Recipient.new
   end

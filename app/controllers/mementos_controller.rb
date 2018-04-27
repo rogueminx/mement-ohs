@@ -14,7 +14,6 @@ class MementosController < ApplicationController
     @memento = Memento.new(memento_params)
     @memento.user_id = current_user.id
     @memento.recipient_id = @recipient.id
-    binding.pry
     if @memento.save
       redirect_to users_mementos_path(current_user)
     else
