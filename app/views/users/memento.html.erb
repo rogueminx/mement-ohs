@@ -3,6 +3,7 @@
 <% if @mementos.any? %>
   <% @mementos.each do |memento| %>
     <%= memento.title %>
+    <%= image_tag memento.image.url %>
   <% end %>
 <% else %>
   <p>You haven't saved any Mementos yet!</p>
