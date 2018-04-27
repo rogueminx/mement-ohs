@@ -1,0 +1,3 @@
+class MementosController < ApplicationController
+
+end

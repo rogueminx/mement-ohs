@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
-  devise_for :users
   root :to => 'layouts#index'
+
+  devise_for :users
+
+  resources :recipients do
+    resources :mementos
+  end
 end
