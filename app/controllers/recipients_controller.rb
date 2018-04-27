@@ -7,7 +7,7 @@ class RecipientsController < ApplicationController
     @recipient = Recipient.new(recipient_params)
     @recipient.user_id = current_user.id
     if @recipient.save
-      redirect_to user_path(current_user)#change to new_recipient_memento_path
+      redirect_to new_recipient_memento_path(@recipient)
     else
       render :new
     end
