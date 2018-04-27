@@ -1,0 +1,11 @@
+<h2>Your Mementos</h2>
+
+<% if @mementos.any? %>
+  <% @mementos.each do |memento| %>
+    <%= memento.title %>
+  <% end %>
+<% else %>
+  <p>You haven't saved any Memenos yet!</p>
+<% end %>
+
+<h5></h5>

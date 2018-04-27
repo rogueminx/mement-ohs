@@ -10,7 +10,7 @@ class MementosController < ApplicationController
     @memento.user_id = current_user.id
     @memento.recipient_id = @recipient.id
     if @memento.save
-      redirect_to mementos_path(current_user)
+      redirect_to users_mementos_path(current_user)
     else
       render :new
     end
