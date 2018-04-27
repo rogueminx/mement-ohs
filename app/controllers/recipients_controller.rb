@@ -2,7 +2,9 @@ class RecipientsController < ApplicationController
   before_action :authenticate_user!, :only => [:new]
 
   def new
+    @user = current_user
     @recipient = Recipient.new
+    @recipients = @user.recipients
   end
 
   def create
@@ -17,7 +19,7 @@ class RecipientsController < ApplicationController
 
 private
   def recipient_params
-    params.require(:recipient).permit(:name, :email, :relation)
+    params.require(:recipient).permit(:name, :email, :relation, :previous_recipient)
   end
 
 end
