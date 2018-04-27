@@ -1,0 +1,20 @@
+<%= render "layouts/errors", :object => @recipient %>
+
+<%= form_for [@recipient] do |f| %>
+  <div class="form_field">
+    <%= f.label :name, "Enter their name" %>
+    <br>
+    <%= f.text_field :name %>
+  </div>
+  <div class="form_field">
+    <%= f.label :relation, "Who are they (co-worker, friend, spouse)" %>
+    <br>
+    <%= f.text_field :relation %>
+  </div>
+  <div class="form_field">
+    <%= f.label :email, "Enter their e-mail (optional for sending)" %>
+    <br>
+    <%= f.email_field :email %>
+  </div>
+  <%= f.submit "Create" %>
+<% end %>
