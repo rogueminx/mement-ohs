@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   resources :recipients do
     resources :mementos
   end
+
+  resources :users do
+    resources :recipients
+  end
 end
