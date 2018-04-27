@@ -2,11 +2,16 @@
 
 <h2>Create a memento for <%= @recipient.name %></h2>
 
-<%= form_for [@recipient, @memento] do |f| %>
+<%= form_for [@recipient, @memento], url: recipient_mementos_path(@recipient), html: { multipart: true } do |f| %>
   <div class="form_field">
     <%= f.label :title, "Title" %>
     <br>
     <%= f.text_field :title %>
+  </div>
+  <div class="form_field">
+    <%= f.label :image %>
+    <br>
+    <%= f.file_field :image %>
   </div>
   <div class="form_field">
     <%= f.label :body, "Body" %>

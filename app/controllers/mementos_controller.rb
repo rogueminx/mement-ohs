@@ -1,4 +1,9 @@
 class MementosController < ApplicationController
+
+  def index
+    @mementos = Memento.all
+  end
+
   def new
     @recipient = Recipient.find(params[:recipient_id])
     @memento = Memento.new
@@ -18,6 +23,6 @@ class MementosController < ApplicationController
 
 private
   def memento_params
-    params.require(:memento).permit(:title, :body, :time_to_send)
+    params.require(:memento).permit(:title, :body, :time_to_send, :image)
   end
 end

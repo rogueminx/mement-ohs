@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   get 'users/:id/mementos', to: 'users#memento', as: :users_mementos
+  get 'mementos', to: 'mementos#index', as: :mementos
 
   resources :recipients do
     resources :mementos
