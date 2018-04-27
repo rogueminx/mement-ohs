@@ -10,10 +10,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_27_151916) do
+ActiveRecord::Schema.define(version: 2018_04_27_162756) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "mementos", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "recipient_id"
+    t.string "title"
+    t.string "body"
+    t.date "time_to_send"
+  end
+
+  create_table "recipients", force: :cascade do |t|
+    t.string "name"
+    t.string "relation"
+    t.string "email"
+    t.integer "user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
