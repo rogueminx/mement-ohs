@@ -1,13 +1,5 @@
 <%= render "layouts/errors", :object => @recipient %>
 
-<% if @recipients.any? %>
-    <%= form_tag(new_memento_path) %>
-    <%= label_tag :name %>
-    <%= select_tag :name, options_from_collection_for_select(@recipients, "id", "name") %>
-    <%= submit_tag "Create" %>
-  <hr>
-<% end %>
-
 <%= form_for [@recipient] do |f| %>
   <div class="form_field">
     <%= f.label :name, "Enter their name" %>
