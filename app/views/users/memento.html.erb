@@ -1,9 +1,8 @@
-<h2>Your Mementos</h2>
-
 <% if @mementos.any? %>
   <% @mementos.each do |memento| %>
-    <%= memento.title %>
-    <%= image_tag memento.image.url %>
+    <div class="memento_image">
+      <%= link_to image_tag(memento.image.url(:medium)), recipient_memento_path(memento.id)%>
+    </div>
   <% end %>
 <% else %>
   <p>You haven't saved any Mementos yet!</p>

@@ -38,7 +38,7 @@ None
 
 ## Support and contact details
 
-Please contact me through github with questions.
+Please contact me through Github with questions.
 
 ## Technologies Used
 
