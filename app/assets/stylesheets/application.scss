@@ -31,11 +31,14 @@ body {
 }
 
 .navbar li {
-  color: #A0BFA6;
   padding: 10px;
   padding-bottom: 10px;
   font-family: 'Oswald', sans-serif;
   font-size: 16px;
+}
+
+.navbar a {
+  color: #A0BFA6 !important;
 }
 
 .nav a:hover {
@@ -46,6 +49,19 @@ body {
 
 .nav a:visited {
   color: #A0BFA6 !important;
+}
+
+.dropdown-menu {
+  background-color: #545454;
+  color: #A0BFA6 !important;
+}
+
+.dropdown-menu{
+    z-index: 1000;
+}
+
+.navbar-default {
+  overflow: visible !important;
 }
 
 .memento_holder:hover .memento_title  {

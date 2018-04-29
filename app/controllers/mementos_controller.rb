@@ -6,6 +6,10 @@ class MementosController < ApplicationController
     @mementos = Memento.current_user_mementos(@user.id)
   end
 
+  def all
+    render :index
+  end
+
   def show
     @memento = Memento.find(params[:id])
   end
@@ -21,7 +25,6 @@ class MementosController < ApplicationController
     @memento.user_id = current_user.id
     @memento.recipient_id = @recipient.id
     if @memento.save
-      binding.pry
       redirect_to  recipient_mementos_path(@recipient.id)
     else
       render :new

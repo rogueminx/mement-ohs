@@ -1,6 +1,15 @@
 class RecipientsController < ApplicationController
   before_action :authenticate_user!, :only => [:new]
 
+  def index
+    @recipients = Recipient.all
+  end
+
+  def show
+    @recipient = Recipient.find(params[:id])
+    @mementos = @recipient.mementos
+  end
+
   def new
     @user = current_user
     @recipient = Recipient.new
