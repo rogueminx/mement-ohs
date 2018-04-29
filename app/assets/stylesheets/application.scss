@@ -1,21 +1,165 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-.memento_image img
-{
-    background: white;
-    display: inline;
-    float: left;
-    margin: 0 15px 15px;
-    padding: 10px 10px 45px;
-    text-align: center;
-    text-decoration: none;
-    -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-    -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
-    box-shadow: 0 4px 6px rgba(0,0,0,.3);
-    -webkit-transition: all .15s linear;
-    -moz-transition: all .15s linear;
-    transition: all .15s linear;
-    z-index:0;
-        position:relative;
+body {
+  background-color: #DDDCD2;
+}
+
+.main-container {
+  width: 99%
+}
+
+.navbar-brand {
+  font-family: 'Pacifico', cursive;
+  font-size: 45px;
+  color: #A0BFA6;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 30px;
+}
+
+.navbar-brand a {
+  color: #A0BFA6;
+}
+
+.navbar-brand a:hover {
+  text-decoration: none;
+}
+
+.navbar {
+  background-color: #545454;
+}
+
+.navbar li {
+  color: #A0BFA6;
+  padding: 10px;
+  padding-bottom: 10px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+}
+
+.nav a:hover {
+  color: #A0BFA6 !important;
+  opacity: .9;
+  text-decoration: underline !important;
+}
+
+.nav a:visited {
+  color: #A0BFA6 !important;
+}
+
+.memento_holder:hover .memento_title  {
+  opacity: 1;
+}
+
+.memento_holder:hover .overlay  {
+  opacity: .9;
+}
+
+.memento_image {
+  background: white;
+  border-radius: 4px;
+  display: inline;
+  float: left;
+  margin: 0 15px 30px;
+  padding: 10px 10px 60px;
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
+  -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
+  box-shadow: 0 4px 6px rgba(0,0,0,.3);
+  -webkit-transition: all .15s linear;
+  -moz-transition: all .15s linear;
+  transition: all .15s linear;
+  z-index:0;
+    position:relative;
+}
+
+.overlay{
+  background-color: white;
+  opacity: .8;
+  transition: all 0.5s ease;
+}
+
+.memento_holder {
+  float: left;
+  margin-right: 30px;
+  position: relative;
+  overflow: hidden;
+}
+
+.memento_title {
+  position: absolute;
+  font-family: 'Pacifico', cursive;
+  font-size: 30px;
+  left: 0;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 120px;
+  padding-left: 50px;
+  opacity: .5;
+  transition: all 0.5s ease;
+  color: #DDDCD2;
+}
+
+.memento_title a {
+  color: #DDDCD2 !important;
+}
+
+.memento_title a:hover {
+  text-decoration: none;
+}
+
+.btn-recipient {
+  background-color: #A0BFA6;
+  border: 1px solid #0D324D;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.btn-recipient a {
+  color: #0D324D;
+  text-decoration: none;
+}
+
+.btn-recipient:hover {
+  opacity: .9;
+}
+
+.form-button {
+  background-color: #A0BFA6;
+  border: 1px solid #0D324D;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.form-button a {
+  color: #0D324D;
+  text-decoration: none;
+}
+
+.form-button:hover {
+  opacity: .9;
+}
+
+h2 {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  color: #1A1D1E;
+}
+
+.page-contents {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-box {
+  background-color: white;
+  opacity: .9;
+  border: 1px solid #0D324D;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 10px;
+  width: 500px;
 }

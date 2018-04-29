@@ -1,27 +1,29 @@
 <%= render "layouts/errors", :object => @recipient %>
+ <div class="form-box">
+   <h2>Create a memento for <%= @recipient.name %></h2>
 
-<h2>Create a memento for <%= @recipient.name %></h2>
+   <%= form_for [@recipient, @memento], url: recipient_mementos_path(@recipient), html: { multipart: true } do |f| %>
+   <div class="form_field">
+     <%= f.label :title, "Title" %>
+     <br>
+     <%= f.text_field :title %>
+   </div>
+   <div class="form_field">
+     <%= f.label :image %>
+     <br>
+     <%= f.file_field :image %>
+   </div>
+   <div class="form_field">
+     <%= f.label :body, "Body" %>
+     <br>
+     <%= f.text_area :body %>
+   </div>
+   <div class="form_field">
+     <%= f.label :time_to_send, "When do you want to send (optional)?" %>
+     <br>
+     <%= f.date_field :time_to_send %>
+   </div>
+   <%= f.submit "Create Memento", class: 'form-button' %>
+   <% end %>
 
-<%= form_for [@recipient, @memento], url: recipient_mementos_path(@recipient), html: { multipart: true } do |f| %>
-  <div class="form_field">
-    <%= f.label :title, "Title" %>
-    <br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="form_field">
-    <%= f.label :image %>
-    <br>
-    <%= f.file_field :image %>
-  </div>
-  <div class="form_field">
-    <%= f.label :body, "Body" %>
-    <br>
-    <%= f.text_area :body %>
-  </div>
-  <div class="form_field">
-    <%= f.label :time_to_send, "When do you want to send (optional)?" %>
-    <br>
-    <%= f.date_field :time_to_send %>
-  </div>
-  <%= f.submit "Create Memento" %>
-<% end %>
+ </div>

@@ -1,16 +1,15 @@
 <%= render "layouts/errors", :object => @recipient %>
-
-<% if @recipients.any? %>
+<div class="form-box">
+  <% if @recipients.any? %>
   <% @recipients.each do |recipient| %>
-  <button type="button" class="btn btn-default">
+  <button type="button" class="btn btn-recipient">
     <%= link_to recipient.name, new_recipient_memento_path(recipient) %>
   </button>
-
   <% end %>
-<% end %>
-<hr>
-<h4>Add a new person!</h4>
-<%= form_for [@recipient] do |f| %>
+  <% end %>
+  <hr>
+  <h4>Add a new person!</h4>
+  <%= form_for [@recipient] do |f| %>
   <div class="form_field">
     <%= f.label :name, "Enter their name" %>
     <br>
@@ -26,5 +25,6 @@
     <br>
     <%= f.email_field :email %>
   </div>
-  <%= f.submit "Create" %>
-<% end %>
+  <%= f.submit "Create", class: 'form-button' %>
+  <% end %>
+</div>
