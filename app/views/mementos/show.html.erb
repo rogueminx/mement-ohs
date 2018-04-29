@@ -1,4 +1,12 @@
 <div class="page-contents">
-  <h2><%= @memento.title %></h2>
-
+  <h2><%= @memento.title %> with <%= @recipient.name %></h2>
+  <hr>
+  <div class="memento-box">
+    <div class="memento-photo">
+      <%= image_tag @memento.image.url, class: 'large_memento_image' %>
+    </div>
+    <div class="memento-body">
+      <p><%= @memento.body %></p>
+    </div>
+  </div>
 </div>

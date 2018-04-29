@@ -12,6 +12,7 @@ class MementosController < ApplicationController
 
   def show
     @memento = Memento.find(params[:id])
+    @recipient = Recipient.find(params[:recipient_id])
   end
 
   def new
