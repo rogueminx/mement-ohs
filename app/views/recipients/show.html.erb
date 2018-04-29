@@ -1,5 +1,5 @@
 <div class="page-contents">
-  <h2>Memories with <% @recipient.name %></h2>
+  <h2>Memories with <%= @recipient.name %></h2>
   <% if @mementos.any? %>
     <% @mementos.each do |memento| %>
       <div class="memento_holder">
