@@ -8,6 +8,8 @@
 
 This web application will allow a user to store mementos associated with important people in their lives.
 
+<kbd><img src="app/assets/images/Screenshot02.png" alt=""></kbd>
+
 #### Learning Objectives
 1. Learn more about routing and custom routing
 2. Practice paperclip and devise in another situation
@@ -21,8 +23,10 @@ This web application will allow a user to store mementos associated with importa
 #### Future Behavior
 1. Allow user to select a previous recipient to add a memento to with a drop down or links, so no redundancies are created.
 
-## Setup/Installation Requirements
 
+<kbd><img src="app/assets/images/Screenshot01.png" alt=""></kbd>
+
+## Setup/Installation Requirements
 * Open terminal
 * Move to desired folder
 * Type  _`$ git clone https://github.com/rogueminx/mement-ohs.git`_
