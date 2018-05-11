@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :mementos
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
-
+  after_save :send_welcome_mail
 
  def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
@@ -15,5 +15,11 @@ class User < ActiveRecord::Base
     elsif conditions.has_key?(:username) || conditions.has_key?(:email)
       where(conditions.to_h).first
     end
+  end
+
+  private
+  def send_welcome_mail
+    @user = User.last
+    UserMailer.welcome_email(@user).deliver_now
   end
 end
