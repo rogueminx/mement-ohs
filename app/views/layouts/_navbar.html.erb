@@ -11,33 +11,25 @@
     <span aria-hidden="true"></span>
   </a>
   <div class="navbar-menu" id="navMenu">
-    <a class="navbar-item">
-      <span aria-hidden="true"><%= link_to "Create", new_recipient_path %></span>
-    </a>
-    <a class="navbar-item">
-      <span aria-hidden="true"><% if current_user %><%= link_to "View Collection", recipients_path %><% end %></span>
-    </a>
+      <span aria-hidden="true">
+        <%= link_to "Create", new_recipient_path, class: "navbar-item" %>
+      </span>
+      <span aria-hidden="true">
+        <% if current_user %><%= link_to "View Collection", recipients_path, class: "navbar-item" %><% end %>
+      </span>
     <% if current_user %>
-    <a class="navbar-item">
       <span aria-hidden="true">
-        <%= link_to "Sign out", '/users/sign_out', method: 'delete' %>
+        <%= link_to "Sign out", '/users/sign_out', method: 'delete', class: "navbar-item" %>
       </span>
-    </a>
-    <a class="navbar-item">
       <span aria-hidden="true">
-        <%=link_to "Hi, #{current_user.username}", user_path(current_user) %>
+        <%=link_to "Hi, #{current_user.username}", user_path(current_user), class: "navbar-item" %>
       </span>
-    </a>
     <% else %>
-    <a class="navbar-item">
       <span aria-hidden="true">
-        <%= link_to "Sign up", '/users/sign_up' %>
+        <%= link_to "Sign up", '/users/sign_up', class: "navbar-item"  %>
       </span>
-    </a>
-    <a class="navbar-item">
       <span aria-hidden="true">
-        <%= link_to "Sign in", '/users/sign_in' %>
+        <%= link_to "Sign in", '/users/sign_in', class: "navbar-item" %>
       </span>
-    </a>
     <% end %>
 </nav>
