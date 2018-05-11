@@ -3,19 +3,41 @@
 
 <nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="navbar-brand">
-    <div class="navbar-item"><%= link_to "Mement'ohs", root_path %></div>
+    <%= link_to "Mement'ohs", root_path %>
   </div>
-  <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-    <span aria-hidden="true"><%= link_to "Create", new_recipient_path %></span>
-    <span aria-hidden="true"><% if current_user %><%= link_to "View Collection", recipients_path %><% end %></span>
-    <span aria-hidden="true">
-      <% if current_user %>
-        <%= link_to "Sign out", '/users/sign_out', method: 'delete' %>
-        <%=link_to "Hi, #{current_user.username}", user_path(current_user) %>
-      <% else %>
-       <%= link_to "Sign up", '/users/sign_up' %>
-       <%= link_to "Sign in", '/users/sign_in' %>
-     <% end %>
-   </span>
+  <a role="button" class="navbar-burger" data-target="navMenu" aria-label="menu" aria-expanded="false">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
   </a>
+  <div class="navbar-menu" id="navMenu">
+    <a class="navbar-item">
+      <span aria-hidden="true"><%= link_to "Create", new_recipient_path %></span>
+    </a>
+    <a class="navbar-item">
+      <span aria-hidden="true"><% if current_user %><%= link_to "View Collection", recipients_path %><% end %></span>
+    </a>
+    <% if current_user %>
+    <a class="navbar-item">
+      <span aria-hidden="true">
+        <%= link_to "Sign out", '/users/sign_out', method: 'delete' %>
+      </span>
+    </a>
+    <a class="navbar-item">
+      <span aria-hidden="true">
+        <%=link_to "Hi, #{current_user.username}", user_path(current_user) %>
+      </span>
+    </a>
+    <% else %>
+    <a class="navbar-item">
+      <span aria-hidden="true">
+        <%= link_to "Sign up", '/users/sign_up' %>
+      </span>
+    </a>
+    <a class="navbar-item">
+      <span aria-hidden="true">
+        <%= link_to "Sign in", '/users/sign_in' %>
+      </span>
+    </a>
+    <% end %>
 </nav>

@@ -15,6 +15,8 @@ body {
   font-size: 45px;
   color: #A0BFA6;
   margin-right: 30px;
+  margin-left: 10px;
+
 }
 
 .navbar-brand a {
@@ -29,7 +31,7 @@ body {
   background-color: #545454;
 }
 
-.navbar li {
+.navbar-item {
   padding: 10px;
   padding-bottom: 10px;
   font-family: 'Oswald', sans-serif;
@@ -43,24 +45,10 @@ body {
 .nav a:hover {
   color: #A0BFA6 !important;
   opacity: .9;
-  text-decoration: underline !important;
 }
 
 .nav a:visited {
   color: #A0BFA6 !important;
-}
-
-.dropdown-menu {
-  background-color: #545454;
-  color: #A0BFA6 !important;
-}
-
-.dropdown-menu{
-    z-index: 1000;
-}
-
-.navbar-default {
-  overflow: visible !important;
 }
 
 .memento_holder:hover .memento_title  {
