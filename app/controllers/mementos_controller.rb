@@ -40,7 +40,6 @@ class MementosController < ApplicationController
  def update
    @memento = Memento.find(params[:id])
    @recipient = Recipient.find(params[:recipient_id])
-   binding.pry
    if @memento.update!(memento_params)
      redirect_to recipient_memento_path(@recipient, @memento)
    else
@@ -49,9 +48,10 @@ class MementosController < ApplicationController
  end
 
  def destroy
+   @recipient = Recipient.find(params[:recipient_id])
    @memento = Memento.find(params[:id])
    @memento.destroy
-   redirect_to mementos_path
+   redirect_to recipient_mementos_path(@recipient)
  end
 
 
