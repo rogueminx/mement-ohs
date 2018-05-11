@@ -1,6 +1,6 @@
 <div class="page-contents">
   <h2>Memories with <%= @recipient.name %></h2>
-  <p><%= link_to "Share with <%= @recipient.name %>", new_recipient_path %></p>
+  <p><%= link_to "Share with #{@recipient.name}", new_recipient_path %></p>
   <% if @mementos.any? %>
     <% @mementos.each do |memento| %>
       <div class="memento_holder">

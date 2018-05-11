@@ -28,5 +28,5 @@ My plan upon graduating from Epicodus is to spend every other day focused on cod
 5 - Continue to meet up with key classmates to work on projects and have study time.
 4 - Read and research more about machine-learning (also available through Amazon)
 3 - Add token authentication to Mement-oh
-3 -  Volunteer to help at Women Who Code.
+3 - Volunteer to help at Women Who Code.
 3 - Learn more about Lumberjack.

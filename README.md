@@ -10,9 +10,6 @@ This web application will allow a user to store mementos associated with importa
 
 <kbd><img src="app/assets/images/Screenshot02.png" alt=""></kbd>
 
-#### Learning Objectives
-1. Learn more about routing and custom routing
-2. Practice paperclip and devise in another situation
 
 #### Behavior
 1. Allows user to log in or create account.
@@ -21,8 +18,8 @@ This web application will allow a user to store mementos associated with importa
 4. Allows user to view all mementos.
 
 #### Future Behavior
-1. Allow user to select a previous recipient to add a memento to with a drop down or links, so no redundancies are created.
-
+1. Allow used to share memento set with recipient.
+2. Allow collaborators. 
 
 <kbd><img src="app/assets/images/Screenshot01.png" alt=""></kbd>
 

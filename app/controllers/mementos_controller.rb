@@ -26,11 +26,33 @@ class MementosController < ApplicationController
     @memento.user_id = current_user.id
     @memento.recipient_id = @recipient.id
     if @memento.save
-      redirect_to  recipient_mementos_path(@recipient.id)
+      redirect_to recipient_mementos_path(@recipient.id)
     else
       render :new
     end
   end
+
+  def edit
+    @recipient = Recipient.find(params[:recipient_id])
+    @memento = Memento.find(params[:id])
+  end
+
+ def update
+   @memento = Memento.find(params[:id])
+   @recipient = Recipient.find(params[:recipient_id])
+   binding.pry
+   if @memento.update!(memento_params)
+     redirect_to recipient_memento_path(@recipient, @memento)
+   else
+     render :edit
+   end
+ end
+
+ def destroy
+   @memento = Memento.find(params[:id])
+   @memento.destroy
+   redirect_to mementos_path
+ end
 
 
 private
