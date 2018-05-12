@@ -15,7 +15,14 @@
         <%= link_to "Create", new_recipient_path, class: "navbar-item" %>
       </span>
       <span aria-hidden="true">
-        <% if current_user %><%= link_to "View Collection", recipients_path, class: "navbar-item" %><% end %>
+        <div class="navbar-item has-dropdown">
+          <% if current_user %><%= link_to "View Collection", recipients_path, class: "navbar-link" %><% end %>
+          <div class="navbar-dropdown">
+            <a href="/" class="navbar-item">Hi</a>
+            <a href="/" class="navbar-item">Hi</a>
+            <a href="/" class="navbar-item">Hi</a>
+          </div>
+        </div>
       </span>
     <% if current_user %>
       <span aria-hidden="true">
