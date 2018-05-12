@@ -1,10 +1,10 @@
 <section class="section">
   <div class="container">
     <div class="section">
-      <div class="columns is-mobile is-multiline is-centered">
+      <div class="columns is-mobile is-multiline">
         <% if @mementos.any? %>
         <% @mementos.each do |memento| %>
-        <div class="column is-narrow">
+        <div class="column is-3">
           <div class="memento-holder">
             <div class="sub-title">
               <%= link_to memento.title, recipient_memento_path(@recipient, memento), class: "memento_title" %>
