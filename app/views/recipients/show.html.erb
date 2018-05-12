@@ -1,16 +1,23 @@
-<div class="page-contents">
-  <h2>Memories with <%= @recipient.name %></h2>
-  <p><%= link_to "Share with #{@recipient.name}", new_recipient_path %></p>
-  <% if @mementos.any? %>
-    <% @mementos.each do |memento| %>
-      <div class="memento_holder">
-        <div class="memento_title"><%= link_to memento.title, recipient_memento_path(@recipient, memento) %></div>
-        <div class="overlay">
-          <%= link_to (image_tag memento.image.url(:medium)), recipient_memento_path(@recipient, memento), class: 'memento_image' %>
+<section class="section">
+  <div class="container">
+    <h2 class="title">Memories with <%= @recipient.name %></h2>
+    <p><%= link_to "Share with #{@recipient.name}", new_recipient_path %></p>
+    <div class="section">
+      <div class="columns is-mobile is-multiline is-centered">
+        <% if @mementos.any? %>
+        <% @mementos.each do |memento| %>
+        <div class="column is-narrow">
+          <div class="sub-title">
+            <%= link_to memento.title, recipient_memento_path(@recipient, memento), class: "memento_title" %>
+          </div>
+          <%= link_to (image_tag memento.image.url(:medium)), recipient_memento_path(@recipient, memento) %>
         </div>
+        <% end %>
       </div>
+    </div>
+      <% else %>
+      <p>You haven't saved any Mementos yet!</p>
       <% end %>
-    <% else %>
-    <p>You haven't saved any Mementos yet!</p>
-  <% end %>
-</div>
+    </div>
+  </div>
+</section>

@@ -49,54 +49,11 @@ body {
   color: #A0BFA6 !important;
 }
 
-.memento_holder:hover .memento_title  {
-  opacity: 1;
-}
-
-.memento_holder:hover .overlay  {
-  opacity: .9;
-}
-
-.memento_image {
-  background: white;
-  border-radius: 4px;
-  display: inline;
-  float: left;
-  margin: 0 15px 30px;
-  padding: 10px 10px 60px;
-  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, .3);
-  -moz-box-shadow: 0 4px 6px rgba(0,0,0,.3);
-  box-shadow: 0 4px 6px rgba(0,0,0,.3);
-  -webkit-transition: all .15s linear;
-  -moz-transition: all .15s linear;
-  transition: all .15s linear;
-  z-index:0;
-    position:relative;
-}
-
-.overlay{
-  background-color: white;
-  opacity: .8;
-  transition: all 0.5s ease;
-}
-
-.memento_holder {
-  float: left;
-  margin-right: 30px;
-  position: relative;
-  overflow: hidden;
-}
-
 .memento_title {
   position: absolute;
   font-family: 'Pacifico', cursive;
   font-size: 30px;
-  left: 0;
-  text-align: center;
-  vertical-align: middle;
-  padding-top: 120px;
-  padding-left: 50px;
-  opacity: .5;
+  opacity: .9;
   transition: all 0.5s ease;
   color: #DDDCD2;
 }
@@ -105,8 +62,16 @@ body {
   color: #DDDCD2 !important;
 }
 
-.memento_title a:hover {
-  text-decoration: none;
+.memento_image {
+ width: 500px;
+}
+
+.memento_holder {
+  overflow: hidden;
+}
+
+.is_ancestor {
+  flex-wrap: wrap;
 }
 
 .btn-recipient {
@@ -124,6 +89,7 @@ body {
 .btn-recipient:hover {
   opacity: .9;
 }
+
 
 .form-button {
   background-color: #A0BFA6;
