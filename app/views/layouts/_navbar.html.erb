@@ -15,14 +15,18 @@
         <%= link_to "Create", new_recipient_path, class: "navbar-item" %>
       </span>
       <span aria-hidden="true">
-        <div class="navbar-item has-dropdown">
-          <% if current_user %><%= link_to "View Collection", recipients_path, class: "navbar-link" %><% end %>
+        <% if current_user %>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <%= link_to "View Collection", recipients_path, class: "navbar-link" %>
+          <% if current_recipients.any? %>
           <div class="navbar-dropdown">
-            <a href="/" class="navbar-item">Hi</a>
-            <a href="/" class="navbar-item">Hi</a>
-            <a href="/" class="navbar-item">Hi</a>
+            <% current_recipients.each do |recipient| %>
+            <%= link_to "#{recipient.name}", recipient_path(recipient), class: "navbar-item" %>
+            <% end %>
           </div>
+          <% end %>
         </div>
+        <% end %>
       </span>
     <% if current_user %>
       <span aria-hidden="true">

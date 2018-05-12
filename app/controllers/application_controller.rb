@@ -1,7 +1,14 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-
+  helper_method :current_recipients
   before_action :configure_permitted_parameters, if: :devise_controller?
+
+  def current_recipients
+    if current_user
+      @user = current_user
+      @recipients = @user.recipients
+    end
+  end
 
   protected
 
