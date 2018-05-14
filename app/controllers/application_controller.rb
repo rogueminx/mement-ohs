@@ -1,12 +1,12 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  helper_method :current_recipients
+  helper_method :current_collections
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  def current_recipients
+  def current_collections
     if current_user
       @user = current_user
-      @recipients = @user.recipients
+      @collections = @user.collections
     end
   end
 

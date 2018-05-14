@@ -1,8 +1,8 @@
-<%= render "layouts/errors", :object => @recipient %>
+<%= render "layouts/errors", :object => @collection %>
  <div class="form-box">
-   <h2>Create a memento for <%= @recipient.name %></h2>
+   <h2>Create a memento for <%= @collection.title %></h2>
 
-   <%= form_for [@recipient, @memento], url: recipient_mementos_path(@recipient), html: { multipart: true } do |f| %>
+   <%= form_for [@collection, @memento], url: collection_mementos_path(@collection), html: { multipart: true } do |f| %>
    <div class="form_field">
      <%= f.label :title, "Title" %>
      <br>

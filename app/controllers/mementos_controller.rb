@@ -1,7 +1,7 @@
 class MementosController < ApplicationController
 
   def index
-    @recipient = Recipient.find(params[:recipient_id])
+    @collection = Collection.find(params[:collection_id])
     @user = current_user
     @mementos = Memento.current_user_mementos(@user.id)
   end
@@ -12,46 +12,46 @@ class MementosController < ApplicationController
 
   def show
     @memento = Memento.find(params[:id])
-    @recipient = Recipient.find(params[:recipient_id])
+    @collection = Collection.find(params[:collection_id])
   end
 
   def new
-    @recipient = Recipient.find(params[:recipient_id])
+    @collection = Collection.find(params[:collection_id])
     @memento = Memento.new
   end
 
   def create
-    @recipient = Recipient.find(params[:recipient_id])
+    @collection = Collection.find(params[:collection_id])
     @memento = Memento.new(memento_params)
     @memento.user_id = current_user.id
-    @memento.recipient_id = @recipient.id
+    @memento.collection_id = @collection.id
     if @memento.save
-      redirect_to recipient_mementos_path(@recipient.id)
+      redirect_to collection_mementos_path(@collection.id)
     else
       render :new
     end
   end
 
   def edit
-    @recipient = Recipient.find(params[:recipient_id])
+    @collection = Collection.find(params[:collection_id])
     @memento = Memento.find(params[:id])
   end
 
  def update
    @memento = Memento.find(params[:id])
-   @recipient = Recipient.find(params[:recipient_id])
+   @collection = Collection.find(params[:collection_id])
    if @memento.update!(memento_params)
-     redirect_to recipient_memento_path(@recipient, @memento)
+     redirect_to collection_memento_path(@collection, @memento)
    else
      render :edit
    end
  end
 
  def destroy
-   @recipient = Recipient.find(params[:recipient_id])
+   @collection = Collection.find(params[:collection_id])
    @memento = Memento.find(params[:id])
    @memento.destroy
-   redirect_to recipient_mementos_path(@recipient)
+   redirect_to collection_mementos_path(@collection)
  end
 
 

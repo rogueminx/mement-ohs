@@ -1,15 +1,15 @@
-<%= render "layouts/errors", :object => @recipient %>
+<%= render "layouts/errors", :object => @collection %>
 <div class="form-box">
-  <% if @recipients.any? %>
-  <% @recipients.each do |recipient| %>
-  <button type="button" class="btn btn-recipient">
-    <%= link_to recipient.name, new_recipient_memento_path(recipient) %>
+  <% if @collections.any? %>
+  <% @collections.each do |collection| %>
+  <button type="button" class="btn btn-collection">
+    <%= link_to collection.name, new_collection_memento_path(collection) %>
   </button>
   <% end %>
   <% end %>
   <hr>
   <h4>Add a new person!</h4>
-  <%= form_for [@recipient] do |f| %>
+  <%= form_for [@collection] do |f| %>
   <div class="form_field">
     <%= f.label :name, "Enter their name" %>
     <br>

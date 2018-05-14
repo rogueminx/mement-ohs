@@ -1,8 +1,8 @@
-<%= render "layouts/errors", :object => @recipient %>
+<%= render "layouts/errors", :object => @collection %>
  <div class="form-box">
-   <h2>Update Memento for <%= @recipient.name %></h2>
+   <h2>Update Memento for <%= @collection.name %></h2>
 
-   <%= form_for [@recipient, @memento], url: recipient_memento_path(@recipient, @memento), html: { multipart: true } do |f| %>
+   <%= form_for [@collection, @memento], url: collection_memento_path(@collection, @memento), html: { multipart: true } do |f| %>
    <div class="form_field">
      <%= f.label :title, "Title" %>
      <br>

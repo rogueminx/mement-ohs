@@ -1,13 +1,13 @@
 <div class="page-contents">
   <h2>View the memories you share with each person</h2>
-  <% if @recipients.any? %>
-  <% @recipients.each do |recipient| %>
-  <button type="button" class="btn btn-recipient">
-    <%= link_to recipient.name, recipient_path(recipient) %>
+  <% if @collections.any? %>
+  <% @collections.each do |collection| %>
+  <button type="button" class="btn btn-collection">
+    <%= link_to collection.name, collection_path(collection) %>
   </button>
   <% end %>
-  <button type="button" class="btn btn-recipient">
-    <%= link_to "View All Mementos", recipient_mementos_path(@recipients.last.id) %>
+  <button type="button" class="btn btn-collection">
+    <%= link_to "View All Mementos", collection_mementos_path(@collections.last.id) %>
   </button>
   <% end %>
 </div>

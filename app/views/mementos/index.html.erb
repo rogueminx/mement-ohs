@@ -7,9 +7,9 @@
         <div class="column is-3">
           <div class="memento-holder">
             <div class="sub-title">
-              <%= link_to memento.title, recipient_memento_path(@recipient, memento), class: "memento_title" %>
+              <%= link_to memento.title, collection_memento_path(@collection, memento), class: "memento_title" %>
             </div>
-            <%= link_to (image_tag memento.image.url(:medium)), recipient_memento_path(@recipient, memento), class: "memento_image" %>
+            <%= link_to (image_tag memento.image.url(:medium)), collection_memento_path(@collection, memento), class: "memento_image" %>
           </div>
         </div>
         <% end %>
