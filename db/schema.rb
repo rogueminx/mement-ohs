@@ -10,28 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_04_27_200031) do
+ActiveRecord::Schema.define(version: 2018_05_14_171718) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "collections", force: :cascade do |t|
+    t.string "title"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "collections_users", id: false, force: :cascade do |t|
+    t.bigint "collection_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["collection_id"], name: "index_collections_users_on_collection_id"
+    t.index ["user_id"], name: "index_collections_users_on_user_id"
+  end
+
+  create_table "invites", force: :cascade do |t|
+    t.string "email"
+    t.integer "collection_id"
+    t.integer "sender_id"
+    t.integer "recipient_id"
+    t.string "token"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "mementos", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "recipient_id"
+    t.integer "collection_id"
     t.string "title"
     t.string "body"
-    t.date "time_to_send"
     t.string "image_file_name"
     t.string "image_content_type"
     t.integer "image_file_size"
     t.datetime "image_updated_at"
-  end
-
-  create_table "recipients", force: :cascade do |t|
-    t.string "name"
-    t.string "relation"
-    t.string "email"
-    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|

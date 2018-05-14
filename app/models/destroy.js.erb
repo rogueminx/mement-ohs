@@ -1,0 +1,2 @@
+$('#item-box-<%= @item.id %>').remove();
+$('#cost-box').html('<p>Your Total: <%= number_to_currency current_order.total_price %></p>');
