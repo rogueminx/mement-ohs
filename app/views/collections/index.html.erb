@@ -1,0 +1,17 @@
+<div class="page-contents">
+  <% if @collections.any? %>
+  <h2>View the memories you share with each person</h2>
+      <% @collections.each do |collection| %>
+        <button type="button" class="btn btn-collection">
+          <%= link_to collection.title, collection_path(collection) %>
+        </button>
+      <% end %>
+      <button type="button" class="btn btn-collection">
+        <%= link_to "View All Mementos", collection_mementos_path(@collections.last.id) %>
+      </button>
+  <% else %>
+  <h2>You have no collections yet!</h2>
+  <%= link_to "Create a Collection", new_collection_path %>
+  <% end %>
+
+</div>

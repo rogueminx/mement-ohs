@@ -1,0 +1,19 @@
+<%= render "layouts/errors", :object => @collection %>
+<div class="form-box">
+  <% if @collections.any? %>
+  <% @collections.each do |collection| %>
+  <button type="button" class="btn btn-collection">
+    <%= link_to collection.title, new_collection_memento_path(collection) %>
+  </button>
+  <% end %>
+  <% end %>
+  <h4 class="subtitle is-4">What do you want to remember?</h4>
+  <%= form_for [@collection] do |f| %>
+  <div class="form_field">
+    <%= f.label :title, "Collection Title" %>
+    <br>
+    <%= f.text_field :title %>
+  </div>
+  <%= f.submit "Create", class: 'form-button' %>
+  <% end %>
+</div>

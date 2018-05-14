@@ -1,5 +1,5 @@
 <div class="page-contents">
-  <h2><%= @memento.title %> with <%= @collection.name %></h2>
+  <h2><%= @memento.title %> with <%= @collection.title %></h2>
     <p><%= link_to "Edit", edit_collection_memento_path(@collection, @memento) %><%= link_to "Delete", collection_memento_path(@collection, @memento), :data => {:confirm => "Are you sure?", :method => "delete"}  %></p>
   <hr>
   <div class="memento-box">

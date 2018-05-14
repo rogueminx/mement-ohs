@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root :to => 'layouts#index'
 
-  devise_for :users
+  devise_for :users 
 
   get 'mementos', to: 'mementos#all', as: :mementos
 
