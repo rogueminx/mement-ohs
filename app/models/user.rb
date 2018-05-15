@@ -7,7 +7,7 @@ class User < ActiveRecord::Base
   has_many :sent_invites, :class_name => "Invite", :foreign_key => 'sender_id'
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable, authentication_keys: [:login]
-  after_create :send_welcome_mail
+  # after_create :send_welcome_mail
 
  def self.find_for_database_authentication(warden_conditions)
     conditions = warden_conditions.dup
