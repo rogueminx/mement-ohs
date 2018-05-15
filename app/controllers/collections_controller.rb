@@ -27,9 +27,19 @@ class CollectionsController < ApplicationController
     end
   end
 
+  def edit
+    @user = current_user
+    @invite = Invite.new
+    @collection = Collection.find(params[:id])
+  end
+
 private
   def collection_params
     params.require(:collection).permit(:title)
+  end
+
+  def invite_params
+    params.require(:invite).permit(:email)
   end
 
 end

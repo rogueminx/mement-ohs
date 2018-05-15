@@ -3,7 +3,7 @@
   <h2>View the memories you share with each person</h2>
       <% @collections.each do |collection| %>
         <button type="button" class="btn btn-collection">
-          <%= link_to collection.title, collection_path(collection) %>
+          <%= link_to collection.title, user_collection_path(current_user, collection) %>
         </button>
       <% end %>
       <button type="button" class="btn btn-collection">
