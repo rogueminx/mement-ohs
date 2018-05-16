@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_15_181511) do
+ActiveRecord::Schema.define(version: 2018_05_16_150825) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,11 +21,6 @@ ActiveRecord::Schema.define(version: 2018_05_15_181511) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "collections_users", id: false, force: :cascade do |t|
-    t.bigint "collection_id", null: false
-    t.bigint "user_id", null: false
-  end
-
   create_table "invites", force: :cascade do |t|
     t.string "email"
     t.integer "collection_id"
@@ -34,6 +29,11 @@ ActiveRecord::Schema.define(version: 2018_05_15_181511) do
     t.string "token"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "memberships", id: false, force: :cascade do |t|
+    t.bigint "collection_id", null: false
+    t.bigint "user_id", null: false
   end
 
   create_table "mementos", force: :cascade do |t|
@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2018_05_15_181511) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "role", default: "f"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

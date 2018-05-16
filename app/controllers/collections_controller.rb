@@ -9,6 +9,7 @@ class CollectionsController < ApplicationController
   def show
     @collection = Collection.find(params[:id])
     @mementos = @collection.mementos
+    @invite = Invite.new
   end
 
   def new
