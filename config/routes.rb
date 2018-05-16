@@ -9,8 +9,6 @@ Rails.application.routes.draw do
     resources :mementos
   end
 
-  resources :invites
-
   resources :users do
     resources :collections
   end
