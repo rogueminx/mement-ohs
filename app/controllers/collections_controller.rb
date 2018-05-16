@@ -9,7 +9,6 @@ class CollectionsController < ApplicationController
   def show
     @collection = Collection.find(params[:id])
     @mementos = @collection.mementos
-    @invite = Invite.new
   end
 
   def new
@@ -21,6 +20,7 @@ class CollectionsController < ApplicationController
   def create
     @collection = Collection.new(collection_params)
     current_user.collections.push(@collection)
+    Collection.create_owner(@collection)
     if current_user.save!
       redirect_to new_collection_memento_path(@collection)
     else
