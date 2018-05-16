@@ -29,9 +29,25 @@ class CollectionsController < ApplicationController
   end
 
   def edit
-    @user = current_user
-    @invite = Invite.new
     @collection = Collection.find(params[:id])
+  end
+
+  def update
+    @collection = Collection.find(params[:id])
+    if @collection.update!(collection_params)
+      flash[:notice] = "#{@collection.title} was a
+      updated."
+      redirect_to user_collections_path(current_user)
+    else
+      flash[:alert] = "There was a proble updating #{@collection.title}."
+      render :edit
+    end
+  end
+
+  def destroy
+    @collection = Collection.find(params[:id])
+    @collection.destroy
+    redirect_to user_collections_path(current_user)
   end
 
 private
