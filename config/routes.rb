@@ -7,9 +7,15 @@ Rails.application.routes.draw do
 
   resources :collections do
     resources :mementos
+    patch 'invite_user' => 'collections#invite'
   end
 
   resources :users do
     resources :collections
   end
+
+  # resources :collections do
+  #   member do
+  #   end
+  # end
 end

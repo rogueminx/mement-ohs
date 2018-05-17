@@ -1,4 +1,5 @@
 class CollectionsController < ApplicationController
+  include DeviseInvitable::Inviter
   before_action :authenticate_user!, :only => [:new]
 
   def index
@@ -9,6 +10,8 @@ class CollectionsController < ApplicationController
   def show
     @collection = Collection.find(params[:id])
     @mementos = @collection.mementos
+    @users = User.all
+    @user = current_user
   end
 
   def new
@@ -39,7 +42,7 @@ class CollectionsController < ApplicationController
       updated."
       redirect_to user_collections_path(current_user)
     else
-      flash[:alert] = "There was a proble updating #{@collection.title}."
+      flash[:alert] = "There was a problem updating #{@collection.title}."
       render :edit
     end
   end
@@ -50,13 +53,28 @@ class CollectionsController < ApplicationController
     redirect_to user_collections_path(current_user)
   end
 
+  def invite
+    @user = User.find_by(invite_params)
+    @collection = Collection.find(params[:collection_id])
+    if @user != nil
+      binding.pry
+      Membership.create({user_id: @user.id, collection_id: @collection.id})
+      flash[:notice] = "Yay! Invitation was to #{@user.email}!"
+      #sendestablisheduserinvite
+    else
+      #sendnewuserinvitemailer
+      flash[:notice] = "NOT A USER. Invitation was sent to #{@user.email}!"
+      redirect_to user_collections_path(current_user)
+    end
+  end
+
 private
   def collection_params
     params.require(:collection).permit(:title)
   end
 
   def invite_params
-    params.require(:invite).permit(:email)
+    params.require(:user).permit(:email)
   end
 
 end

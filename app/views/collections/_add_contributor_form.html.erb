@@ -1,4 +1,4 @@
-<%= form_for @collaboration , :url => invite_user_path do |f| %>
+<%= form_for @user, :url => collection_invite_user_path(@collection) do |f| %>
   <%= f.hidden_field :collection_id, :value => @collection.id %>
   <%= f.hidden_field :user_id, :value => current_user.id %>
   <%= f.label :email %>
