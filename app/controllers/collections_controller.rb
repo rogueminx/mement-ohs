@@ -57,14 +57,14 @@ class CollectionsController < ApplicationController
     @user = User.find_by(invite_params)
     @collection = Collection.find(params[:collection_id])
     if @user != nil
-      binding.pry
       Membership.create({user_id: @user.id, collection_id: @collection.id})
+      # UserMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
       flash[:notice] = "Yay! Invitation was to #{@user.email}!"
-      #sendestablisheduserinvite
+      redirect_to user_collection_path(current_user, @collection)
     else
       #sendnewuserinvitemailer
       flash[:notice] = "NOT A USER. Invitation was sent to #{@user.email}!"
-      redirect_to user_collections_path(current_user)
+      redirect_to user_collection_path(current_user, @collection)
     end
   end
 

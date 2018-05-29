@@ -1,3 +1,8 @@
+
+
+$navbar-item-hover-background-color: #091516;
+$navbar-dropdown-item-hover-background-color: #D6CFB8;
+
 @import "bulma";
 // @import "bootstrap-sprockets";
 // @import "bootstrap"÷;
@@ -6,20 +11,21 @@ body {
   $background: $white-ter
 }
 
+
 .main-container {
   width: 99%
 }
 
 .navbar-brand {
-  font-family: 'Pacifico', cursive;
+  font-family: 'Sanchez', serif;
   font-size: 45px;
-  color: #A0BFA6;
+  color: #EDE5CB;
   margin-right: 30px;
   margin-left: 10px;
 }
 
 .navbar-brand a {
-  color: #A0BFA6;
+  color: #EDE5CB;
 }
 
 .navbar-brand a:hover {
@@ -27,44 +33,48 @@ body {
 }
 
 .navbar {
-  background-color: #545454;
+  background-color: #091516;
   align-items: baseline;
 }
 
 .navbar-item {
-  font-family: 'Oswald', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
 }
 
 .navbar-link a {
-  color: #A0BFA6 !important;
+  color: #EDE5CB !important;
 }
 
 .navbar-link a:hover {
-  color: #A0BFA6 !important;
+  color: #EDE5CB !important;
 }
 
 .navbar a {
-  color: #A0BFA6 !important;
+  color: #EDE5CB !important;
 }
 
 .nav a:hover {
-  color: #A0BFA6 !important;
+  color: #EDE5CB !important;
   opacity: .9;
 }
 
 .nav a:visited {
-  color: #A0BFA6 !important;
+  color: #EDE5CB !important;
 }
 
 .navbar-dropdown {
   overflow: visible;
-  color: black;
+  background-color: #B3BAAB;
+}
+
+.navbar-item-hover-background-color {
+  background-color: #DBD4BC;
 }
 
 .memento_title {
   position: absolute;
-  font-family: 'Pacifico', cursive;
+  font-family: 'Sanchez', serif;
   font-size: 30px;
   opacity: .9;
   transition: all 0.5s ease;
@@ -88,7 +98,7 @@ body {
 }
 
 .btn-collection {
-  background-color: #A0BFA6;
+  background-color: #EDE5CB;
   border: 1px solid #0D324D;
   border-radius: 10px;
   overflow: hidden;
@@ -105,7 +115,7 @@ body {
 
 
 .form-button {
-  background-color: #A0BFA6;
+  background-color: #EDE5CB;
   border: 1px solid #0D324D;
   border-radius: 5px;
   overflow: hidden;
