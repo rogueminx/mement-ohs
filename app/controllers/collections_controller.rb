@@ -66,7 +66,6 @@ class CollectionsController < ApplicationController
       redirect_to user_collection_path(current_user, @collection)
       # UserMailer.new_user_invite(@invite, new_user_registration_path(:invite_token => @invite.token)).deliver
     else
-      #sendnewuserinvitemailer
       flash[:notice] = "NOT A USER. Invitation was sent to #{@user.email}!"
       redirect_to user_collection_path(current_user, @collection)
     end
@@ -75,10 +74,6 @@ class CollectionsController < ApplicationController
 private
   def collection_params
     params.require(:collection).permit(:title)
-  end
-
-  def invite_params
-    params.require(:user).permit(:email)
   end
 
 end
