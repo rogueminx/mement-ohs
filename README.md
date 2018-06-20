@@ -16,10 +16,11 @@ This web application will allow a user to store mementos associated with importa
 2. Allows allows user to add a new recipient.
 3. Allows user to add a new memento associated with that person.
 4. Allows user to view all mementos.
+5. Allows user to share + collaborate on collections.
 
 #### Future Behavior
-1. Allow used to share memento set with recipient.
-2. Allow collaborators. 
+6. Fix collections from being shared twice to same user.
+7. Attach e-mail functionality with invites that users can chose to accept or not.
 
 <kbd><img src="app/assets/images/Screenshot01.png" alt=""></kbd>
 
