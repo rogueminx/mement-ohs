@@ -5,4 +5,6 @@ class UserMailer < ApplicationMailer
      mail(to: @user.email, subject: 'Welcome to Mement-oh')
   end
 
+  def invite_email
+
 end

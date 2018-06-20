@@ -14,8 +14,5 @@ Rails.application.routes.draw do
     resources :collections
   end
 
-  # resources :collections do
-  #   member do
-  #   end
-  # end
+
 end
